@@ -1,0 +1,40 @@
+ An exception is an event, which occurs during the execution of a program, 
+ that disrupts the normal flow of the program's instructions.
+ Exception halts the current execution of program. Exception relates to 
+ errors that take place while executing a program.
+
+There are many built-in exceptions in Python, but some common ones include:
+
+ 1.TypeError
+ 2.ValueError
+ 3.NameError
+ 4.IndexError
+ 5.KeyError
+ 6.AttributeError
+ 7.ZeroDivisionError
+ 8.IOError
+ 9.FileNotFoundError
+ 10.KeyboardInterrupt
+ 11.MemoryError
+ 12.OverflowError
+ 13.ImportError
+ 14.IndentationError
+ 15.SyntaxError
+
+In Python, you can handle exceptions using a try-except block. Here's the basic syntax:
+
+ try:
+      code that might raise an exception
+ except ExceptionType:
+      code to handle the exception
+
+ Here's how it works: 
+ The code inside the try block is executed, and if an exception 
+ of type ExceptionType is raised, then the code inside the except block is executed.
+ If no exception is raised, then the except block is skipped. when we don't know the Exception
+ type we can print using  traceback.print_exc() fun.
+
+
+
+
+

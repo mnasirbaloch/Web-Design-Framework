@@ -1,0 +1,45 @@
+/* styles for all devices */
+@media all {
+  /* styles here */
+}
+
+/* styles for screens with a minimum width of 600px */
+@media screen and (min-width: 600px) {
+  /* styles here */
+}
+
+/* styles for screens with a maximum width of 600px */
+@media screen and (max-width: 600px) {
+  /* styles here */
+}
+
+/* styles for screens with a width between 600px and 900px */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  /* styles here */
+}
+
+/* styles for screens in portrait orientation */
+@media screen and (orientation: portrait) {
+  /* styles here */
+}
+
+/* styles for screens in landscape orientation */
+@media screen and (orientation: landscape) {
+  /* styles here */
+}
+
+/* styles for print devices */
+@media print {
+  /* styles here */
+}
+
+/* styles for devices with a high resolution (2dppx or higher) */
+@media screen and (min-resolution: 2dppx) {
+  /* styles here */
+}
+
+/* styles for devices with a low resolution (1dppx or lower) */
+@media screen and (max-resolution: 1dppx) {
+  /* styles here */
+}
+
