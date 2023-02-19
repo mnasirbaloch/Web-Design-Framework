@@ -1,0 +1,21 @@
+<div style="display:flex; justify-content: center;">
+  <div class="container">
+  <input [(ngModel)]="todo" type="text" placeholder="Enter your todo" />
+  &nbsp;
+  <button (click)="addTodo()">Add todo</button>
+</div>
+</div>
+<div style="margin-top: 15px; display: flex;" *ngFor="let todo of todos">
+  <div class="todoItemclass">
+    <span [class.completed]="todo.status === 'completed'">
+      {{ todo.todo }}</span
+    >
+    &nbsp;
+    <button *ngIf="todo.status === 'active'" (click)="markAsComplete(todo)">
+      Complete
+    </button>
+    <button (click)="undo(todo)" *ngIf="todo.status === 'completed'">
+      Undo
+    </button>
+  </div>
+</div>

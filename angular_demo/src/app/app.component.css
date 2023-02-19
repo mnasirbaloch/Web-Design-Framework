@@ -1,0 +1,16 @@
+.message{
+    border: solid 1px red;
+    font-size: 54px;
+    color:blue;
+    margin-top: 10px;
+}
+.imageDiv{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.nameDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
