@@ -4,18 +4,27 @@
   &nbsp;
   <button (click)="addTodo()">Add todo</button>
 </div>
+
 </div>
-<div style="margin-top: 15px; display: flex;" *ngFor="let todo of todos">
-  <div class="todoItemclass">
-    <span [class.completed]="todo.status === 'completed'">
-      {{ todo.todo }}</span
+<div style="display:flex;justify-content: center; padding-top: 10px;" *ngIf="todos.length === 0">
+  List is Empty
+</div>
+<div style="margin-top: 15px; display: flex;" *ngFor="let todoItem of todos" >
+  
+  <div class="todoItemclass" >
+    <span [class.completed]="todoItem.status === 'completed'">
+      {{ todoItem.name }}</span
     >
     &nbsp;
-    <button *ngIf="todo.status === 'active'" (click)="markAsComplete(todo)">
+    <button *ngIf="todoItem.status === 'active'" (click)="markAsComplete(todoItem)">
       Complete
     </button>
-    <button (click)="undo(todo)" *ngIf="todo.status === 'completed'">
+    <button (click)="undo(todoItem)" *ngIf="todoItem.status === 'completed'">
       Undo
     </button>
+    <button (click)="delete(todoItem)" *ngIf="todoItem.status === 'completed'">
+      Delete
+    </button>
+  
   </div>
 </div>
