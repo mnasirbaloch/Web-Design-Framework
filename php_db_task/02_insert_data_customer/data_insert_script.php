@@ -1,11 +1,13 @@
 <?php
 
-// variables which contains the name of each column in database table #customers
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "demo_customer";
 $table_name = "customers";
+
+
+// variables which contains the name of each column in database table #customers
 $col_id = "customerid";
 $col_compname = "companyname";
 $col_contactname="contactname";
@@ -20,10 +22,11 @@ $conn = new mysqli($servername, $username, $password,$database);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-// echo "Connected successfully";
+echo "Connected successfully";
 
 // a command which will be used to insert data in databse
 $insertCommand = "INSERT INTO $table_name ($col_id,$col_compname,$col_contactname,$col_address,$col_city,$col_pcode,$col_country) VALUES (?,?,?,?,?,?,?)";
+
 
 // check if request method is post if yes lets insert data into databse
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -36,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $postalcode = $_POST['postalcode'];
   $country = $_POST['country'];
 
-  // prepare our insert commands
+  
+// Prepares a statement for execution and returns a statement object
  $sqlcmd = $conn->prepare($insertCommand);
 
  // bind parameters with our command
@@ -44,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // lets execute command using try-catch so that if error occured will be visible to user via echo
   try {
+    // the execute method will run the sql command and return number of effected rows
   $result=$sqlcmd->execute();
   echo "<br>";
   echo '<h1>Congratulation Data Inserted Successfully</h1>';
